@@ -1,0 +1,25 @@
+{
+  "name": "impress-with-cypress",
+  "version": "3.7.0",
+  "description": "Browser automation with a time travel GUI",
+  "main": "js/reveal.js",
+  "scripts": {
+    "start": "http-server -c-1"
+  },
+  "author": {
+    "name": "Jeff Sallans",
+    "email": "jeffsallans@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hakimel/reveal.js.git"
+  },
+  "engines": {
+    "node": ">=4.0.0"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "http-server": "^0.11.1",
+    "particles.js": "^2.0.0"
+  }
+}
