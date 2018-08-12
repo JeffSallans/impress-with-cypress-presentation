@@ -4,7 +4,9 @@
   "description": "Browser automation with a time travel GUI",
   "main": "js/reveal.js",
   "scripts": {
-    "start": "http-server -c-1"
+    "start": "http-server -c-1",
+    "cypress:start": "cypress open",
+    "cypress:run": "cypress run"
   },
   "author": {
     "name": "Jeff Sallans",
@@ -19,6 +21,7 @@
   },
   "license": "MIT",
   "dependencies": {
+    "cypress": "^3.0.3",
     "http-server": "^0.11.1",
     "particles.js": "^2.0.0"
   }
