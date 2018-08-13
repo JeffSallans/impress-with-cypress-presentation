@@ -9,6 +9,10 @@
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
 		<link rel="stylesheet" href="css/custom.css">
+		<link rel="stylesheet" href="css/title-slide.css">
+		<link rel="stylesheet" href="css/agenda.css">
+		<link rel="stylesheet" href="css/about-us.css">
+		<link rel="stylesheet" href="css/cypress-fit-in.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -27,80 +31,60 @@
 			<div class="slides">
 				<section data-markdown>
 					<textarea data-template>
-						# Impress with Cypress
+						# Impress with Cypress <!-- .element: class="title-card__title" -->
 
-						## Browser Automation with a timetravel GUI
+						## Browser Automation with a timetravel GUI <!-- .element: class="title-card__sub-title" -->
 				
-						Jeff Sallans
+						Jeff Sallans <!-- .element: class="title-card__presentor" -->
 					</textarea>
 				</section>
 				<section data-markdown>
 					<textarea data-template>
-						## About Me
+						## About Me <!-- .element: class="about-me__title" -->
 				
-						X by 2
+						X by 2 <!-- .element: class="about-me__xby2-title" -->
 
-						Picture of PJ and Kiki
+						![X by 2 Scavenger Hunt Team](/assets/xby2-scavenger-hunt-team.webp) <!-- .element: class="about-me__xby2-image" -->
+
+						PJ <!-- .element: class="about-me__family-title" -->
+
+						![Picture of me and PJ]() <!-- .element: class="about-me__family-image" -->
+
+						Kiki <!-- .element: class="about-me__dog-title" -->
+
+						![Picture of me and Kiki]() <!-- .element: class="about-me__dog-image" -->
 					</textarea>
 				</section>
 				<section data-markdown>
 					<textarea data-template>
-						## Agenda
+						## Agenda <!-- .element: class="agenda__title" -->
 				
-						* What problems does Cypress solve?
-						* What makes Cypress different?
-						* What does development look like?
-						* How does Cypress compare to other solutions?
-						* What does Cypress look like in an enterprise environment
+						* What problem does Cypress solve? <!-- .element: class="agenda__item fragment" data-fragment-index="1" -->
+						* How does Cypress compare to others? <!-- .element: class="agenda__item fragment" data-fragment-index="2" -->
+						* What does development look like? <!-- .element: class="agenda__item fragment" data-fragment-index="3" -->
+						* When should Cypress be used? <!-- .element: class="agenda__item fragment" data-fragment-index="4" -->
+						* What does it look like in an enterprise environment? <!-- .element: class="agenda__item fragment" data-fragment-index="5" -->
 					</textarea>
 				</section>
 				<section>
 					<section data-markdown>
 						<textarea data-template>
-							## What problems do Cypress solve?
+							## What problem does Cypress solve?
 						</textarea>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Types of testing
-
-							Testing Pyramid
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							## Example SPA Architecture
-
-							React -> Node -> MongoDB image
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							## Testing for this SPA
-
-							Test types X React -> Node -> MongoDB image
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							## Highlight Testing for this SPA
-
-							Test types X React -> Node -> MongoDB image (with accents)
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							## Comparable with
-
-							* Vanilla selenium
-							* A record & playback framework on-top of selenium
+							![How Cypress Fits Into Testing](/assets/where-does-cypress-fit-in-1.png) <!-- .element: class="cypress-fit-in__image"-->
+							![How Cypress Fits Into Testing](/assets/where-does-cypress-fit-in-2.png) <!-- .element: class="cypress-fit-in__image fragment" data-fragment-index="1" -->
+							![How Cypress Fits Into Testing](/assets/where-does-cypress-fit-in-3.png) <!-- .element: class="cypress-fit-in__image fragment" data-fragment-index="2" -->
+							![How Cypress Fits Into Testing](/assets/where-does-cypress-fit-in-4.png) <!-- .element: class="cypress-fit-in__image fragment" data-fragment-index="3" -->
 						</textarea>
 					</section>
 				</section>
 				<section>
 					<section data-markdown>
 						<textarea data-template>
-							## What makes Cypress different?
+							## How does Cypress compare to others?
 						</textarea>
 					</section>
 					<section data-markdown>
@@ -112,25 +96,15 @@
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## This gives us
-
-							* Faster setup time
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
 							## Rebuilt Webdriver Framework
 
 							selenium vs cypress image
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							## This gives us
 
-							* More reliable tests
-							* More flexible tests
-							* Faster tests
+							```JavaScript
+							if (test === "test") {
+								cy.get('.save').click();
+							}
+							```
 						</textarea>
 					</section>
 				</section>
@@ -230,6 +204,7 @@
 			// - https://github.com/hakimel/reveal.js#configuration
 			// - https://github.com/hakimel/reveal.js#dependencies
 			Reveal.initialize({
+				history: true,
 				dependencies: [
 					{ src: 'plugin/markdown/marked.js' },
 					{ src: 'plugin/markdown/markdown.js' },
