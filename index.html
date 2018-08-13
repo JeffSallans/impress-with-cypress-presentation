@@ -15,6 +15,7 @@
 		<link rel="stylesheet" href="css/cypress-fit-in.css">
 		<link rel="stylesheet" href="css/cypress-compare.css">
 		<link rel="stylesheet" href="css/why-new-lib.css">
+		<link rel="stylesheet" href="css/code-sample.css">
 		<link rel="stylesheet" href="css/thank-you.css">
 
 		<!-- Theme used for syntax highlighting of code -->
@@ -95,31 +96,9 @@
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							What did Protractor and Katalon have that Cypress didn't?
+							## Katalon Demo
 
-							Selenium <!-- .element: class="orange-accent fragment" data-fragment-index="1" -->
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							## Why a new Library?
-
-							Selenium code <!-- .element: class="why-new-lib__selenium-title" -->
-							
-							Cypress code <!-- .element: class="why-new-lib__cypress-title fragment" data-fragment-index="1" -->
-
-							```JavaScript
-							if (test === "test") {
-								cy.get('.save').click();
-							}
-							```
-
-							<pre class="fragment" data-fragment-index="1"><code class="lang-JavaScript hljs">
-cy.get('.action-form')
-	.submit();
-cy.get('.second-page-input')
-	.type('second page');
-							</code></pre>
+							[Test Site](https://example.cypress.io/commands/actions) <!-- .element: target="_blank"-->
 						</textarea>
 					</section>
 				</section>
@@ -141,65 +120,154 @@ cy.get('.second-page-input')
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Code Sample
+							## Cypress command structure
 
-							#### with browser interactions
-
-							```JavaScript
-							it('.submit() - submit a form', () => {
-								// https://on.cypress.io/submit
-								cy.get('.action-form')
-								  .find('[type="text"]').type('HALFOFF');
-								cy.get('.action-form').submit();
-							  })
+							```
+							cy.get("css selector")."action"
 							```
 						</textarea>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Code Sample
-							
-							#### with assert
+							#### Code Sample
 
 							```JavaScript
-							it('.submit() - submit a form', () => {
-								// https://on.cypress.io/submit
+							it.only('displays a confirmation message', () => {
+								// Navigate to the webpage
+								cy.visit('https://example.cypress.io/commands/actions');
+								
+								// Select the coupon field
 								cy.get('.action-form')
-								  .find('[type="text"]').type('HALFOFF');
-								cy.get('.action-form').submit()
-								  .next().should('contain', 'Your form has been submitted!');
-							  })
+									.find('[type="text"]')
+									.type('HALFOFF');
+
+								// Submit the form
+								cy.get('.action-form [type="submit"]')
+									.click();
+							});
 							```
 						</textarea>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Code Sample
-							
-							#### with verbose assert
+							#### Code Sample with assert
 
 							```JavaScript
-							it('.submit() - submit a form', () => {
-								// https://on.cypress.io/submit
+							it.only('displays a confirmation message', () => {
+
+								// Navigate to the webpage
+								cy.visit('https://example.cypress.io/commands/actions');
+								
+								// Select the coupon field
 								cy.get('.action-form')
-									.find('[type="text"]').type('HALFOFF');
-								cy.get('.action-form').submit()
-									.next().then((element) => {
+									.find('[type="text"]')
+									.type('HALFOFF');
+
+								// Submit the form
+								cy.get('.action-form [type="submit"]')
+									.click();
+
+								// Check the result
+								cy.get('.action-form + p')
+									.should('contain', 'Your form has been submitted!');
+							});
+							```
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Cypress Demo
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							#### Code Sample with custom assert
+							
+							```JavaScript
+							it.only('displays a confirmation message', () => {
+								cy.visit('https://example.cypress.io/commands/actions');
+								cy.get('.action-form')
+									.find('[type="text"]')
+									.type('HALFOFF');
+								cy.get('.action-form [type="submit"]')
+									.click();
+
+								// Check the result
+								cy.get('.action-form + p')
+									.then((element) => {
+										debugger;
 										expect(element.innerHTML)
 										.to.equal('Your form has been submitted!');
 									});
-								})
+							});
 							```
 						</textarea>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Demo of runner
+							## Cypress Demo with debug tool
+						</textarea>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							## How does Cypress compare to others? (cont.)
 						</textarea>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Demo of runner with debug tool
+							![How does Cypress compare](/assets/cypress-solution-3.png) <!-- .element: class="cypress-compare__image"-->
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							What did Protractor and Katalon have that Cypress didn't?
+
+							Selenium <!-- .element: class="orange-accent fragment" data-fragment-index="1" -->
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Why a new Library?
+
+							Cypress code <!-- .element: class="why-new-lib__cypress-title" -->
+							
+							Selenium code <!-- .element: class="why-new-lib__selenium-title fragment" data-fragment-index="1" -->
+
+							```JavaScript
+							cy.get('.data-field')
+								.should('equal', 'old value');
+						
+							cy.get('.refresh-data-button')
+								.click();
+							
+							cy.get('.loading-spinner')
+								.should('not.exist');
+							
+							cy.get('.data-field')
+								.should('equal', 'new value');
+
+							```
+
+							<pre class="fragment" data-fragment-index="1"><code class="lang-JavaScript hljs">
+sel.get('.data-field')
+	.should('equal', 'old value');
+sel.get('.refresh-data-button').click();
+
+// This is slower and more fragile
+sel.wait(100);  
+while(
+	sel.get('.loading-spinner').exists()
+) {
+	// if we have been waiting
+	// for 10 seconds fail
+}
+
+sel.get('.data-field')
+	.should('equal', 'new value');
+
+							</code></pre>
 						</textarea>
 					</section>
 				</section>
@@ -211,23 +279,17 @@ cy.get('.second-page-input')
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## When should Cypress be used?
+							#### Use Cypress when you need:
+							* A very fast test suite <!-- .element: class="orange-accent fragment" data-fragment-index="1" -->
+							* Better test result feedback <!-- .element: class="orange-accent fragment" data-fragment-index="2" -->
+							* To automate difficult tests <!-- .element: class="orange-accent fragment" data-fragment-index="3" -->
 
-							Cypress
-							* Fast tests
-							* Better test result feedback
-							* Difficult tests
-							* Free when you use your own reporting system
 
-							Protractor
-							* Multiple browsers
-							* To automate a task
-							* Free
 
-							Katalon
-							* Want non-technical users creating automation scripts
-							* Multiple browsers
-							* To automate a task
+							#### Look for another solution when you:
+							* Need to testing multiple browsers <!-- .element: class="orange-accent fragment" data-fragment-index="11" -->
+							* Are not running a test <!-- .element: class="orange-accent fragment" data-fragment-index="12" -->
+							* Want non-technical users to create tests <!-- .element: class="orange-accent fragment" data-fragment-index="13" -->
 						</textarea>
 					</section>
 				</section>
@@ -253,14 +315,13 @@ cy.get('.second-page-input')
 
 							Before Cypress
 
-							* Using UFT for browser automation
-							* Also uses a home grown selenium framework
-							* Typical team size was 3 browser automation developers
+							* Using UFT and Selenium for browser automation <!-- .element: class="orange-accent" -->
+							* Typical team size was 3 automation developers <!-- .element: class="orange-accent" -->
 							
 							After Cypress <!-- .element: class="fragment" data-fragment-index="1" -->
 
-							* 1 UFT developer, 2 Cypress developers <!-- .element: class="fragment" data-fragment-index="1" -->
-							* Cypress tests run after every deploy <!-- .element: class="fragment" data-fragment-index="1" -->
+							* Our team has 1 UFT dev and 2 Cypress devs <!-- .element: class="orange-accent fragment" data-fragment-index="1" -->
+							* Cypress tests run with our CI process <!-- .element: class="orange-accent fragment" data-fragment-index="1" -->
 						</textarea>
 					</section>
 					<section data-markdown>

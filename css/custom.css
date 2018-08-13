@@ -3,6 +3,11 @@
     color: #ffb67a;
 }
 
+/** Last minute header padding */
+h4#look-for-another-solution-when-you- {
+    margin-top:  3rem;
+}
+
 /** particle-js styling */
 
 body {

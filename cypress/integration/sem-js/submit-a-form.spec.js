@@ -1,6 +1,6 @@
 
 describe('Submitting a form', () => {
-    it.only('displays a confirmation message', () => {
+    it('displays a confirmation message', () => {
         // https://on.cypress.io/submit
 
         // Navigate to the webpage
@@ -11,11 +11,34 @@ describe('Submitting a form', () => {
             .find('[type="text"]')
             .type('HALFOFF');
         // Submit the form
-        cy.get('.action-form')
-            .submit();
+        cy.get('.action-form [type="submit"]')
+            .click();
         // Check the result
         cy.get('.action-form + p')
             .should('contain', 'Your form has been submitted!');
+    });
+
+    it('displays a confirmation message (custom assertion)', () => {
+
+        // Navigate to the webpage
+        cy.visit('https://example.cypress.io/commands/actions');
+        
+        // Select the coupon field
+        cy.get('.action-form')
+            .find('[type="text"]')
+            .type('HALFOFF');
+
+        // Submit the form
+        cy.get('.action-form [type="submit"]')
+            .click();
+
+        // Check the result
+        cy.get('.action-form + p')
+            .then((element) => {
+                debugger;
+                expect(element.innerHTML)
+                    .to.equal('Your form has been submitted!');
+            });
     });
 
     it('fills out checkboxes correctly', () => {

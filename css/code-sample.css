@@ -1,0 +1,5 @@
+#code-sample-with-assert + pre > code,
+#code-sample-with-custom-assert + pre > code {
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+}
