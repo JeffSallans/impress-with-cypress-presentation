@@ -1,0 +1,42 @@
+.about-me__xby2-image.about-me__xby2-image {
+    position:  absolute;
+    top: 145px;
+    max-height: 485px;
+    left: 0;
+}
+
+.about-me__title.about-me__title.about-me__title {
+    text-align: left;
+    padding-left: 12rem;
+    height: 700px;
+}
+
+.about-me__family-image {
+    position: absolute;
+    top: 0;
+    height: 400px;
+    right: 0;
+}
+
+.about-me__dog-image {
+    position: absolute;
+    top: 430px;
+    height: 200px;
+    width: 273px;
+    right: 0;
+}
+
+.about-me__xby2-logo.about-me__xby2-logo.about-me__xby2-logo {
+    position: absolute;
+    top: 380px;
+    height: 100px;
+    left: 0px;
+
+    /** Styling for the banner look */
+    background-color: #ffffffe5;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-color: #ffffffe5;
+    padding-right: 11rem;
+    padding-left: 11rem;
+}

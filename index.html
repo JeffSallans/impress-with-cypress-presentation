@@ -11,7 +11,7 @@
 		<link rel="stylesheet" href="css/custom.css">
 		<link rel="stylesheet" href="css/title-slide.css">
 		<link rel="stylesheet" href="css/agenda.css">
-		<link rel="stylesheet" href="css/about-us.css">
+		<link rel="stylesheet" href="css/about-me.css">
 		<link rel="stylesheet" href="css/cypress-fit-in.css">
 		<link rel="stylesheet" href="css/cypress-compare.css">
 		<link rel="stylesheet" href="css/thank-you.css">
@@ -44,17 +44,13 @@
 					<textarea data-template>
 						## About Me <!-- .element: class="about-me__title" -->
 				
-						X by 2 <!-- .element: class="about-me__xby2-title" -->
-
 						![X by 2 Scavenger Hunt Team](/assets/xby2-scavenger-hunt-team.webp) <!-- .element: class="about-me__xby2-image" -->
 
-						PJ <!-- .element: class="about-me__family-title" -->
+						![Picture of me and PJ](/assets/jeff-and-pj.jpg) <!-- .element: class="about-me__family-image" -->
 
-						![Picture of me and PJ]() <!-- .element: class="about-me__family-image" -->
+						![Picture of me and Kiki](/assets/jeff-and-kiki.jpg) <!-- .element: class="about-me__dog-image" -->
 
-						Kiki <!-- .element: class="about-me__dog-title" -->
-
-						![Picture of me and Kiki]() <!-- .element: class="about-me__dog-image" -->
+						![X by 2 logo](/assets/x-by-2-logo.png) <!-- .element: class="about-me__xby2-logo" -->
 					</textarea>
 				</section>
 				<section data-markdown>
@@ -144,7 +140,9 @@ cy.get('.second-page-input').type('second page');
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Code Sample - (interaction)
+							## Code Sample
+
+							#### with browser interactions
 
 							```JavaScript
 							it('.submit() - submit a form', () => {
@@ -158,7 +156,9 @@ cy.get('.second-page-input').type('second page');
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Code Sample - (assert)
+							## Code Sample
+							
+							#### with assert
 
 							```JavaScript
 							it('.submit() - submit a form', () => {
@@ -173,7 +173,9 @@ cy.get('.second-page-input').type('second page');
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Code Sample - (verbose assert)
+							## Code Sample
+							
+							#### with verbose assert
 
 							```JavaScript
 							it('.submit() - submit a form', () => {
@@ -182,7 +184,8 @@ cy.get('.second-page-input').type('second page');
 									.find('[type="text"]').type('HALFOFF');
 								cy.get('.action-form').submit()
 									.next().then((element) => {
-										expect(element.innerHTML).to.equal('Your form has been submitted!');
+										expect(element.innerHTML)
+										.to.equal('Your form has been submitted!');
 									});
 								})
 							```
@@ -235,18 +238,19 @@ cy.get('.second-page-input').type('second page');
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Auto Owners - Policy Management System
+							## Insurance Policy Management System
 
 							* 3-4 year project
-							* 100+ team members
+							* 100+ members
+							* ~10 member team size
 							* React/Redux - Express.js - Camel
 						</textarea>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Auto Owners Environment
+							## Transitioning to Cypress
 
-							Before Cypress 
+							Before Cypress
 
 							* Using UFT for browser automation
 							* Also uses a home grown selenium framework
@@ -260,7 +264,7 @@ cy.get('.second-page-input').type('second page');
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Auto Owners Metrics
+							## Impact of Cypress
 
 							Blocker occurance <!-- .element: class="fragment" data-fragment-index="1" -->
 
@@ -311,7 +315,7 @@ cy.get('.second-page-input').type('second page');
 			/** @see - https://www.npmjs.com/package/particles.js */
 			/* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
 			particlesJS.load('particles-js', 'assets/particles.json', function() {
-			console.log('callback - particles-js config loaded');
+				console.log('callback - particles-js config loaded');
 			});
 		</script>
 	</body>
