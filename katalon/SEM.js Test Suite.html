@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
+	<title>SEM.js Test Suite</title>
+</head>
+<body>
+<table cellpadding="1" cellspacing="1" border="1">
+<thead>
+<tr><td rowspan="1" colspan="3">Submit a form</td></tr>
+</thead>
+<tbody>
+<tr><td>open</td><td>https://example.cypress.io/commands/actions<datalist><option>https://example.cypress.io/commands/actions</option></datalist></td><td></td>
+</tr>
+<tr><td>click</td><td>id=couponCode1<datalist><option>id=couponCode1</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Coupon Code'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('', "'", 'Your form has been submitted!', "'", '')])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Submit'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='.click()'])[1]/preceding::input[1]</option><option>//input[@id='couponCode1']</option><option>//div[@id='actions']/div/div[14]/div/form/div/input</option><option>//div[14]/div/form/div/input</option><option>css=#couponCode1</option></datalist></td><td></td>
+</tr>
+<tr><td>type</td><td>id=couponCode1<datalist><option>id=couponCode1</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Coupon Code'])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('', "'", 'Your form has been submitted!', "'", '')])[1]/following::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Submit'])[1]/preceding::input[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='.click()'])[1]/preceding::input[1]</option><option>//input[@id='couponCode1']</option><option>//div[@id='actions']/div/div[14]/div/form/div/input</option><option>//div[14]/div/form/div/input</option><option>css=#couponCode1</option></datalist></td><td>Test</td>
+</tr>
+<tr><td>click</td><td>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Coupon Code'])[1]/following::button[1]<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Coupon Code'])[1]/following::button[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)=concat('', "'", 'Your form has been submitted!', "'", '')])[1]/following::button[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='.click()'])[1]/preceding::button[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='.click()'])[2]/preceding::button[1]</option><option>//button[@type='submit']</option><option>//div[@id='actions']/div/div[14]/div/form/button</option><option>//form/button</option><option>css=button.btn.btn-primary</option></datalist></td><td></td>
+</tr>
+<tr><td>assertText</td><td>css=.action-form + p<datalist><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Submit'])[1]/following::p[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='Coupon Code'])[1]/following::p[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='.click()'])[1]/preceding::p[1]</option><option>xpath=(.//*[normalize-space(text()) and normalize-space(.)='.click()'])[2]/preceding::p[1]</option><option>//div[@id='actions']/div/div[14]/div/p</option><option>//div[14]/div/p</option><option>css=div.well &gt; p</option><option>css=.action-form + p</option></datalist></td><td>Your form has been submitted!</td>
+</tr>
+</tbody></table>
+</body>
+</html>

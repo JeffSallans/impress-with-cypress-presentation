@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="css/about-me.css">
 		<link rel="stylesheet" href="css/cypress-fit-in.css">
 		<link rel="stylesheet" href="css/cypress-compare.css">
+		<link rel="stylesheet" href="css/why-new-lib.css">
 		<link rel="stylesheet" href="css/thank-you.css">
 
 		<!-- Theme used for syntax highlighting of code -->
@@ -94,16 +95,18 @@
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							What did Protractor and Katalon have that cypress didn't?
+							What did Protractor and Katalon have that Cypress didn't?
 
 							Selenium <!-- .element: class="orange-accent fragment" data-fragment-index="1" -->
 						</textarea>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Why a new Automation Library?
+							## Why a new Library?
 
 							Selenium code <!-- .element: class="why-new-lib__selenium-title" -->
+							
+							Cypress code <!-- .element: class="why-new-lib__cypress-title fragment" data-fragment-index="1" -->
 
 							```JavaScript
 							if (test === "test") {
@@ -111,14 +114,12 @@
 							}
 							```
 
-							Cypress code <!-- .element: class="why-new-lib__cypress-title fragment" data-fragment-index="1" -->
-
-							<pre class="fragment" data-fragment-index="1">
-								<code class="lang-JavaScript hljs">
-cy.get('.action-form').submit();
-cy.get('.second-page-input').type('second page');
-								</code>
-							</pre>
+							<pre class="fragment" data-fragment-index="1"><code class="lang-JavaScript hljs">
+cy.get('.action-form')
+	.submit();
+cy.get('.second-page-input')
+	.type('second page');
+							</code></pre>
 						</textarea>
 					</section>
 				</section>

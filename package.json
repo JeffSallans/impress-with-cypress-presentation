@@ -6,7 +6,7 @@
   "scripts": {
     "start": "http-server -c-1",
     "cypress:start": "cypress open",
-    "cypress:run": "cypress run"
+    "cypress:run": "cypress run --config integrationFolder=cypress/integration/sem-js"
   },
   "author": {
     "name": "Jeff Sallans",

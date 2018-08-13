@@ -1,0 +1,13 @@
+.why-new-lib__selenium-title.why-new-lib__selenium-title,
+.why-new-lib__cypress-title.why-new-lib__cypress-title {
+    width: 45%;
+    display: inline-block;
+}
+
+.reveal #why-a-new-library- ~ pre {
+    width: 45%;
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    vertical-align: top;
+}
