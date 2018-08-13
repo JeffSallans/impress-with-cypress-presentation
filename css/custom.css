@@ -1,3 +1,10 @@
+/** Add some pop to the slide */
+.orange-accent {
+    color: #ffa962eb;
+}
+
+/** particle-js styling */
+
 body {
     margin: 0;
     font:normal 75% Arial, Helvetica, sans-serif;

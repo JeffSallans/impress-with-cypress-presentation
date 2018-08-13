@@ -1,0 +1,8 @@
+/** Make the fragments lay perfectly on top of the other image */
+.cypress-compare__image.fragment {
+    position: absolute;
+    right: 20px;
+    bottom: 40px;
+    top: 40px;
+    left: 20px;
+}

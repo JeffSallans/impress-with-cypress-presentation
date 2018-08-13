@@ -13,6 +13,8 @@
 		<link rel="stylesheet" href="css/agenda.css">
 		<link rel="stylesheet" href="css/about-us.css">
 		<link rel="stylesheet" href="css/cypress-fit-in.css">
+		<link rel="stylesheet" href="css/cypress-compare.css">
+		<link rel="stylesheet" href="css/thank-you.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
@@ -33,7 +35,7 @@
 					<textarea data-template>
 						# Impress with Cypress <!-- .element: class="title-card__title" -->
 
-						## Browser Automation with a timetravel GUI <!-- .element: class="title-card__sub-title" -->
+						## Browser Automation with a time travel GUI <!-- .element: class="title-card__sub-title" -->
 				
 						Jeff Sallans <!-- .element: class="title-card__presentor" -->
 					</textarea>
@@ -89,22 +91,38 @@
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Opinionated full featured solution
-
-							selenium responsibilities vs cypress responsibilities image
+							![How does Cypress compare](/assets/cypress-solution-1.png) <!-- .element: class="cypress-compare__image"-->
+							![How does Cypress compare](/assets/cypress-solution-2.png) <!-- .element: class="cypress-compare__image fragment" data-fragment-index="1" -->
+							![How does Cypress compare](/assets/cypress-solution-3.png) <!-- .element: class="cypress-compare__image fragment" data-fragment-index="2" -->
 						</textarea>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Rebuilt Webdriver Framework
+							What did Protractor and Katalon have that cypress didn't?
 
-							selenium vs cypress image
+							Selenium <!-- .element: class="orange-accent fragment" data-fragment-index="1" -->
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Why a new Automation Library?
+
+							Selenium code <!-- .element: class="why-new-lib__selenium-title" -->
 
 							```JavaScript
 							if (test === "test") {
 								cy.get('.save').click();
 							}
 							```
+
+							Cypress code <!-- .element: class="why-new-lib__cypress-title fragment" data-fragment-index="1" -->
+
+							<pre class="fragment" data-fragment-index="1">
+								<code class="lang-JavaScript hljs">
+cy.get('.action-form').submit();
+cy.get('.second-page-input').type('second page');
+								</code>
+							</pre>
 						</textarea>
 					</section>
 				</section>
@@ -116,78 +134,155 @@
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Documentation is fantastic
+							## Installation
 
-							picture of documentation
+							```
+							$> npm install cypress
+							$> cypress open
+							```
 						</textarea>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
 							## Code Sample - (interaction)
 
-							code sample
+							```JavaScript
+							it('.submit() - submit a form', () => {
+								// https://on.cypress.io/submit
+								cy.get('.action-form')
+								  .find('[type="text"]').type('HALFOFF');
+								cy.get('.action-form').submit();
+							  })
+							```
 						</textarea>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Code Sample - (expect)
+							## Code Sample - (assert)
 
-							code sample with expect
+							```JavaScript
+							it('.submit() - submit a form', () => {
+								// https://on.cypress.io/submit
+								cy.get('.action-form')
+								  .find('[type="text"]').type('HALFOFF');
+								cy.get('.action-form').submit()
+								  .next().should('contain', 'Your form has been submitted!');
+							  })
+							```
 						</textarea>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Demo
+							## Code Sample - (verbose assert)
+
+							```JavaScript
+							it('.submit() - submit a form', () => {
+								// https://on.cypress.io/submit
+								cy.get('.action-form')
+									.find('[type="text"]').type('HALFOFF');
+								cy.get('.action-form').submit()
+									.next().then((element) => {
+										expect(element.innerHTML).to.equal('Your form has been submitted!');
+									});
+								})
+							```
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Demo of runner
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Demo of runner with debug tool
 						</textarea>
 					</section>
 				</section>
 				<section>
 					<section data-markdown>
 						<textarea data-template>
-							## How does Cypress compare to other solutions?
+							## When should Cypress be used?
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## When should Cypress be used?
+
+							Cypress
+							* Fast tests
+							* Better test result feedback
+							* Difficult tests
+							* Free when you use your own reporting system
+
+							Protractor
+							* Multiple browsers
+							* To automate a task
+							* Free
+
+							Katalon
+							* Want non-technical users creating automation scripts
+							* Multiple browsers
+							* To automate a task
 						</textarea>
 					</section>
 				</section>
 				<section>
 					<section data-markdown>
 						<textarea data-template>
-							## What does Cypress look like in an enterprise environment?
+							## What does it look like in an enterprise environment?
 						</textarea>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Auto Owners Quality Assurance Principles
+							## Auto Owners - Policy Management System
 
-							* Deliver value with testing - Testing Pyramid
-							* Prevention over detection - Shorten feedback loop
-							* Reduce issues with test case updates - Use monitoring over pass fail
+							* 3-4 year project
+							* 100+ team members
+							* React/Redux - Express.js - Camel
 						</textarea>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							## Auto Owners Environment (before cypress)
+							## Auto Owners Environment
 
-							* previously using UFT for browser automation
-							* Done in USER by UFT trainee
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							## Auto Owners Environment (after cypress)
+							Before Cypress 
 
-							* cypress
-							* Done in DEV, TEST by developers or UFT trainee
+							* Using UFT for browser automation
+							* Also uses a home grown selenium framework
+							* Typical team size was 3 browser automation developers
+							
+							After Cypress <!-- .element: class="fragment" data-fragment-index="1" -->
+
+							* 1 UFT developer, 2 Cypress developers <!-- .element: class="fragment" data-fragment-index="1" -->
+							* Cypress tests run after every deploy <!-- .element: class="fragment" data-fragment-index="1" -->
 						</textarea>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
 							## Auto Owners Metrics
 
-							| metric | before | after |
-							---
-							| Blocker occurance | ~1 a week | ~1 a month |
-							| Time to update test case | 1-2 days | 2-3 hours |
+							Blocker occurance <!-- .element: class="fragment" data-fragment-index="1" -->
+
+							went from ~1 a week <!-- .element: class="orange-accent fragment" data-fragment-index="2" -->
 							
+							to ~1 a month <!-- .element: class="orange-accent fragment" data-fragment-index="3" -->
+							
+
+							Time to update test cases <!-- .element: class="fragment" data-fragment-index="4" -->
+							
+							went from 1-2 days <!-- .element: class="orange-accent fragment" data-fragment-index="5" -->
+							
+							to 2-3 hours <!-- .element: class="orange-accent fragment" data-fragment-index="6" -->
+						</textarea>
+					</section>
+				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							# Thank You!
+
+							[Jeff Sallans on Linkedin](https://www.linkedin.com/in/jeffrey-sallans) <!-- .element: class="thank-you__link" target="_blank" -->
 						</textarea>
 					</section>
 				</section>
