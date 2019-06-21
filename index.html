@@ -60,10 +60,8 @@
 						## Agenda <!-- .element: class="agenda__title" -->
 				
 						* What problem does Cypress solve? <!-- .element: class="agenda__item fragment" data-fragment-index="1" -->
-						* How does Cypress compare to others? <!-- .element: class="agenda__item fragment" data-fragment-index="2" -->
-						* What does development look like? <!-- .element: class="agenda__item fragment" data-fragment-index="3" -->
+						* What does Cypress look like? <!-- .element: class="agenda__item fragment" data-fragment-index="3" -->
 						* When should Cypress be used? <!-- .element: class="agenda__item fragment" data-fragment-index="4" -->
-						* What does it look like in an enterprise environment? <!-- .element: class="agenda__item fragment" data-fragment-index="5" -->
 					</textarea>
 				</section>
 				<section>
@@ -84,190 +82,12 @@
 				<section>
 					<section data-markdown>
 						<textarea data-template>
-							## How does Cypress compare to others?
+							## What does Cypress look like?
 						</textarea>
 					</section>
 					<section data-markdown>
 						<textarea data-template>
-							![How does Cypress compare](assets/cypress-solution-1.png) <!-- .element: class="cypress-compare__image"-->
-							![How does Cypress compare](assets/cypress-solution-2.png) <!-- .element: class="cypress-compare__image fragment" data-fragment-index="1" -->
-							![How does Cypress compare](assets/cypress-solution-3.png) <!-- .element: class="cypress-compare__image fragment" data-fragment-index="2" -->
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							## Katalon Demo
-
-							[Test Site](https://example.cypress.io/commands/actions) <!-- .element: target="_blank"-->
-						</textarea>
-					</section>
-				</section>
-				<section>
-					<section data-markdown>
-						<textarea data-template>
-							## What does development look like?
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							## Installation
-
-							```
-							$> npm install cypress
-							$> cypress open
-							```
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							## Cypress command structure
-
-							```
-							cy.get("css selector")."action"
-							```
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							#### Code Sample
-
-							```JavaScript
-							it.only('displays a confirmation message', () => {
-								// Navigate to the webpage
-								cy.visit('https://example.cypress.io/commands/actions');
-								
-								// Select the coupon field
-								cy.get('.action-form')
-									.find('[type="text"]')
-									.type('HALFOFF');
-
-								// Submit the form
-								cy.get('.action-form [type="submit"]')
-									.click();
-							});
-							```
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							#### Code Sample with assert
-
-							```JavaScript
-							it.only('displays a confirmation message', () => {
-
-								// Navigate to the webpage
-								cy.visit('https://example.cypress.io/commands/actions');
-								
-								// Select the coupon field
-								cy.get('.action-form')
-									.find('[type="text"]')
-									.type('HALFOFF');
-
-								// Submit the form
-								cy.get('.action-form [type="submit"]')
-									.click();
-
-								// Check the result
-								cy.get('.action-form + p')
-									.should('contain', 'Your form has been submitted!');
-							});
-							```
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							## Cypress Demo
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							#### Code Sample with custom assert
-							
-							```JavaScript
-							it.only('displays a confirmation message', () => {
-								cy.visit('https://example.cypress.io/commands/actions');
-								cy.get('.action-form')
-									.find('[type="text"]')
-									.type('HALFOFF');
-								cy.get('.action-form [type="submit"]')
-									.click();
-
-								// Check the result
-								cy.get('.action-form + p')
-									.then((element) => {
-										debugger;
-										expect(element.innerHTML)
-										.to.equal('Your form has been submitted!');
-									});
-							});
-							```
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							## Cypress Demo with debug tool
-						</textarea>
-					</section>
-				</section>
-				<section>
-					<section data-markdown>
-						<textarea data-template>
-							## How does Cypress compare to others? (cont.)
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							![How does Cypress compare](assets/cypress-solution-3.png) <!-- .element: class="cypress-compare__image"-->
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							What did Protractor and Katalon have that Cypress didn't?
-
-							Selenium <!-- .element: class="orange-accent fragment" data-fragment-index="1" -->
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							## Why a new Library?
-
-							Cypress code <!-- .element: class="why-new-lib__cypress-title" -->
-							
-							Selenium code <!-- .element: class="why-new-lib__selenium-title fragment" data-fragment-index="1" -->
-
-							```JavaScript
-							cy.get('.data-field')
-								.should('equal', 'old value');
-						
-							cy.get('.refresh-data-button')
-								.click();
-							
-							cy.get('.loading-spinner')
-								.should('not.exist');
-							
-							cy.get('.data-field')
-								.should('equal', 'new value');
-
-							```
-
-							<pre class="fragment" data-fragment-index="1"><code class="lang-JavaScript hljs">
-sel.get('.data-field')
-	.should('equal', 'old value');
-sel.get('.refresh-data-button').click();
-
-// This is slower and more fragile
-sel.wait(100);  
-while(
-	sel.get('.loading-spinner').exists()
-) {
-	// if we have been waiting
-	// for 10 seconds fail
-}
-
-sel.get('.data-field')
-	.should('equal', 'new value');
-
-							</code></pre>
+							<div style="position: relative; padding-bottom: 56.25%; height: 0;"><iframe src="https://www.loom.com/embed/097a392abeee4f56a6af64d23b7826af" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
 						</textarea>
 					</section>
 				</section>
@@ -284,62 +104,11 @@ sel.get('.data-field')
 							* Better test result feedback <!-- .element: class="orange-accent fragment" data-fragment-index="2" -->
 							* To automate difficult tests <!-- .element: class="orange-accent fragment" data-fragment-index="3" -->
 
-
-
 							#### Look for another solution when you:
-							* Need to testing multiple browsers <!-- .element: class="orange-accent fragment" data-fragment-index="11" -->
-							* Are not running a test <!-- .element: class="orange-accent fragment" data-fragment-index="12" -->
-							* Want non-technical users to create tests <!-- .element: class="orange-accent fragment" data-fragment-index="13" -->
-						</textarea>
-					</section>
-				</section>
-				<section>
-					<section data-markdown>
-						<textarea data-template>
-							## What does it look like in an enterprise environment?
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							## Insurance Policy Management System
-
-							* 3-4 year project
-							* 100+ members
-							* ~10 member team size
-							* React/Redux - Express.js - Camel
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							## Transitioning to Cypress
-
-							Before Cypress
-
-							* Using UFT and Selenium for browser automation <!-- .element: class="orange-accent" -->
-							* Typical team size was 3 automation developers <!-- .element: class="orange-accent" -->
-							
-							After Cypress <!-- .element: class="fragment" data-fragment-index="1" -->
-
-							* Our team has 1 UFT dev and 2 Cypress devs <!-- .element: class="orange-accent fragment" data-fragment-index="1" -->
-							* Cypress tests run with our CI process <!-- .element: class="orange-accent fragment" data-fragment-index="1" -->
-						</textarea>
-					</section>
-					<section data-markdown>
-						<textarea data-template>
-							## Impact of Cypress
-
-							Blocker occurance <!-- .element: class="fragment" data-fragment-index="1" -->
-
-							went from ~1 a week <!-- .element: class="orange-accent fragment" data-fragment-index="2" -->
-							
-							to ~1 a month <!-- .element: class="orange-accent fragment" data-fragment-index="3" -->
-							
-
-							Time to update test cases <!-- .element: class="fragment" data-fragment-index="4" -->
-							
-							went from 1-2 days <!-- .element: class="orange-accent fragment" data-fragment-index="5" -->
-							
-							to 2-3 hours <!-- .element: class="orange-accent fragment" data-fragment-index="6" -->
+							* Need to test different browsers <!-- .element: class="orange-accent fragment" data-fragment-index="11" -->
+							* Need to test multiple browser tabs <!-- .element: class="orange-accent fragment" data-fragment-index="12" -->
+							* Are automating a task <!-- .element: class="orange-accent fragment" data-fragment-index="13" -->
+							* Want non-technical users to create tests <!-- .element: class="orange-accent fragment" data-fragment-index="14" -->
 						</textarea>
 					</section>
 				</section>
@@ -358,7 +127,7 @@ sel.get('.data-field')
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
-		<script src="node_modules/particles.js/particles.js"></script>
+		<script src="js/particles.js"></script>
 
 		<script>
 			// More info about config & dependencies:

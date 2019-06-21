@@ -1,8 +1,10 @@
 # Impress with Cypress
 
-A presentation for SEM.js
+A presentation for SEM.js, and a lightning talk version
 
 ## [View Presentation](https://jeffsallans.github.io/impress-with-cypress-presentation/#/)
+
+## [PDF Printout](https://jeffsallans.github.io/impress-with-cypress-presentation/?print-pdf#/)
 
 ## [Cypress](https://www.cypress.io/)
 
@@ -12,4 +14,4 @@ A presentation for SEM.js
 
 MIT licensed
 
-Copyright (C) 2018 Jeff Sallans, https://www.linkedin.com/in/jeffrey-sallans/
+Copyright (C) 2019 Jeff Sallans, https://www.linkedin.com/in/jeffrey-sallans/
